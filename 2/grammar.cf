@@ -1,0 +1,16 @@
+PRecords. Records ::= [Record] ;
+
+ERecord. Record ::= "Game " Integer ":" [Subset] ;
+terminator Record "\n" ;
+
+separator Subset ";" ;
+LSubset.   Subset    ::= [Draw] ;
+
+separator Draw "," ;
+LDraw. Draw  ::= Integer " " Color ;
+
+CColorRed. Color ::= "red" ;
+CColorGreen. Color ::= "green" ;
+CColorBlue. Color ::= "blue";
+
+
