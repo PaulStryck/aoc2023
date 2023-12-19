@@ -1,0 +1,28 @@
+PRecords. Records ::= Workflows "\n" Data ;
+
+PWorkflows. Workflows ::= [Workflow] ;
+terminator Workflow "\n" ;
+
+EWorkflow. Workflow ::= UName "{" [Instruction] "}";
+separator Instruction ",";
+
+token UName (lower+ | 'A' | 'R') ;
+EInstructionExp. Instruction ::= Cat Comp Integer ":" UName;
+EInstructionJmp. Instruction ::= UName;
+
+CCompLT. Comp ::= "<";
+CCompGT. Comp ::= ">";
+
+
+CatX. Cat ::= "x";
+CatM. Cat ::= "m";
+CatA. Cat ::= "a";
+CatS. Cat ::= "s";
+
+PData. Data ::= [Ratings] ;
+terminator Ratings "\n" ;
+
+ERatings. Ratings ::= "{" [Rating] "}" ;
+
+ERating. Rating ::= Cat "=" Integer ;
+separator Rating "," ;
