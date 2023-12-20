@@ -1,0 +1,11 @@
+PRecords. Records ::= [Module] ;
+terminator Module "\n" ;
+
+token UName (lower+) ;
+
+EModule.      Module ::= Cat UName "->" [UName] ;
+EBroadcaster. Module ::=     UName "->" [UName] ;
+separator UName "," ;
+
+CatFF. Cat ::= "%" ;
+CatC.  Cat ::= "&" ;
